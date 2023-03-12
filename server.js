@@ -20,9 +20,7 @@ const authRoutes = require("./routes/auth");
 const db =
   "mongodb+srv://sanyasingh0721:" +
   process.env.DB_PASSWORD +
-  "@cluster0.urst6zi.mongodb.net/" +
-  process.env.DB_DATABASE +
-  "?retryWrites=true&w=majority";
+  "@cluster0.urst6zi.mongodb.net/?retryWrites=true&w=majority";
 
 // const Seed = require("./seed");
 

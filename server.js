@@ -62,8 +62,8 @@ app.use(
   session({
     //must be declared before passport session and initialize method
     secret: process.env.SESSION_SECRET,
-    saveUninitialized: false,
-    resave: false,
+    saveUninitialized: true,
+    resave: true,
     store,
   })
 );

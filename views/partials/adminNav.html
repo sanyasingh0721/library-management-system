@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0 sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="/admin">Home</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      id="responsive"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item px-2">
+          <a class="nav-link" href="/admin/bookInventory/all/all/1"
+            >Book Inventory</a
+          >
+        </li>
+
+        <li class="nav-item px-2">
+          <a class="nav-link" href="/admin/users/1">Users</a>
+        </li>
+
+        <li class="nav-item px-2">
+          <a class="nav-link" href="/admin/books/add">Add Books</a>
+        </li>
+
+        <li class="nav-item px-2">
+          <a class="nav-link" href="/books/all/all/1"></a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown mr-3">
+          <a
+            href="drop"
+            class="nav-link dropdown-toggle"
+            id="anchor"
+            data-toggle="dropdown"
+          >
+            <i class="fa fa-user"></i> Welcome <%=currentUser.username%>
+          </a>
+          <div class="dropdown-menu" id="drop">
+            <a href="/admin/profile" class="dropdown-item">
+              <i class="fa fa-user-circle"></i> Profile
+            </a>
+
+            <a href="/auth/admin-logout" class="dropdown-item">
+              <i class="fa fa-user-times"></i> Logout
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    document
+      .getElementById("anchor")
+      .addEventListener("click", function (event) {
+        event.preventDefault();
+      });
+    document.querySelectorAll("a#anchor").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const ele = document.getElementById("drop");
+        if (ele.classList.length == 1) {
+          ele.classList.add("active-on");
+          ele.style.display = "block";
+        } else {
+          ele.classList.remove("active-on");
+          ele.style.display = "none";
+        }
+      });
+    });
+  </script>
+  <script>
+    document.getElementById("responsive").addEventListener("click", () => {
+      const ele = document.getElementById("navbarSupportedContent");
+      if (ele.classList.length == 2) {
+        ele.classList.remove("collapse");
+      } else {
+        ele.classList.add("collapse");
+      }
+    });
+  </script>
+</nav>

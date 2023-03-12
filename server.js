@@ -61,7 +61,7 @@ const store = new MongoStore({
 app.use(
   session({
     //must be declared before passport session and initialize method
-    secret: process.env.SESSION_SECRET,
+    secret: 2y$12$nNYIs5iStm9gAsdgDGv3l.OyZN3Reav7U.YfwYW/L/171cjIHgjbm,
     saveUninitialized: true,
     resave: true,
     store,

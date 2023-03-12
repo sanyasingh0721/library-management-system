@@ -18,7 +18,7 @@ const adminRoutes = require("./routes/admin");
 const bookRoutes = require("./routes/books");
 const authRoutes = require("./routes/auth");
 const db =
-  "mongodb+srv://sanyasingh0721:" +
+  "mongodb+srv://sanya:" +
   process.env.DB_PASSWORD +
   "@cluster0.urst6zi.mongodb.net/?retryWrites=true&w=majority";
 
